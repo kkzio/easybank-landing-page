@@ -1,0 +1,534 @@
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans&display=swap");
+.navbar-links ul {
+  display: flex;
+  justify-content: center;
+}
+.navbar-links ul li {
+  margin: 0 2%;
+  list-style: none;
+  position: relative;
+}
+.navbar-links ul li a {
+  text-decoration: none;
+  color: #9698a6;
+  font-size: 0.9em;
+}
+.navbar-links ul li a:after {
+  display: block;
+  pointer-events: none;
+  position: absolute;
+  z-index: 1;
+  content: "";
+  height: 4px;
+  width: 100%;
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+  transform: translateY(1.5em);
+  background: #31d35c;
+  background: linear-gradient(90deg, #31d35c 0%, #2bb7da 100%);
+}
+.navbar-links ul li a:hover:after {
+  opacity: 1;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Public Sans", sans-serif;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 18px;
+}
+body .navbar {
+  padding-left: 10%;
+  padding-right: 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  height: 5em;
+  z-index: 5;
+  position: relative;
+}
+body .navbar .brand-title,
+body .navbar .invite-link {
+  flex: 1;
+}
+body .navbar .navbar-links {
+  flex: 3;
+}
+body .navbar .invite-link {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+body .navbar .invite-link a {
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
+  font-size: 0.8em;
+  background-image: linear-gradient(to right, #31d35c, #2bb7da);
+  border-radius: 40px;
+  padding: 1.75vh 2.5vw;
+  transition: all 0.3s ease-in-out;
+}
+body .navbar .invite-link a:hover {
+  opacity: 0.6;
+}
+body .navbar .button-menu {
+  display: none;
+}
+body #nav-mobile {
+  display: none;
+}
+body main {
+  overflow: hidden;
+}
+body main .easy-bank {
+  padding-left: 10%;
+  padding-right: 0%;
+  background-color: #fafafa;
+  height: 80vh;
+  display: flex;
+  position: relative;
+}
+body main .easy-bank .definition {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+body main .easy-bank .definition .easy-bank-title {
+  font-size: 3em;
+  color: #2d314d;
+  font-weight: 500;
+}
+body main .easy-bank .definition .easy-bank-text {
+  font-size: 0.9em;
+  line-height: 1.5em;
+  color: #9698a6;
+}
+body main .easy-bank .definition .invite-link {
+  display: flex;
+  align-items: center;
+}
+body main .easy-bank .definition .invite-link a {
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
+  font-size: 0.8em;
+  background-image: linear-gradient(to right, #31d35c, #2bb7da);
+  border-radius: 40px;
+  padding: 1.75vh 2.5vw;
+  transition: all 0.3s ease-in-out;
+}
+body main .easy-bank .definition .invite-link a:hover {
+  opacity: 0.6;
+}
+body main .easy-bank .definition > * {
+  margin: 4% 0;
+}
+body main .easy-bank .mockup {
+  flex: 2;
+  position: relative;
+}
+body main .easy-bank .mockup .img-background {
+  position: absolute;
+  width: 150%;
+  top: -40%;
+  z-index: 1;
+}
+body main .easy-bank .mockup .img-mockup {
+  position: absolute;
+  transform: translate(15vw, -15vh);
+  z-index: 3;
+  width: 90%;
+}
+body main .easy-bank-benifit {
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  position: relative;
+  z-index: 2;
+  background-color: #f3f4f6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1em;
+}
+body main .easy-bank-benifit .easy-bank-benifit-title {
+  margin: 0;
+  padding: 0;
+  font-size: 2.25em;
+  color: #2d314d;
+  font-weight: 500;
+}
+body main .easy-bank-benifit .easy-bank-benifit-text {
+  width: 60%;
+  color: #9698a6;
+  line-height: 1.5em;
+}
+body main .easy-bank-benifit .benifits {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  list-style: none;
+  padding: 0;
+  column-gap: 1.5em;
+}
+body main .easy-bank-benifit .benifits .list-benifit h1 {
+  font-size: 1.25em;
+  color: #2d314d;
+  font-weight: 500;
+}
+body main .easy-bank-benifit .benifits .list-benifit p {
+  font-size: 0.9em;
+  color: #9698a6;
+  line-height: 1.5em;
+}
+body main .easy-bank-benifit .benifits .list-benifit > * {
+  margin: 1em 0;
+}
+body main .easy-bank-article {
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  background-color: #fafafa;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+body main .easy-bank-article .easy-bank-article-title {
+  margin: 0;
+  color: #2d314d;
+  font-weight: 500;
+  font-size: 2.25em;
+}
+body main .easy-bank-article .articles {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 2em;
+  list-style: none;
+  padding: 0;
+  margin-top: 2em;
+}
+body main .easy-bank-article .articles .list-article {
+  background-color: white;
+  border-radius: 0.35em;
+}
+body main .easy-bank-article .articles .list-article img {
+  width: 100%;
+  height: 50%;
+  border-top-left-radius: 0.35em;
+  border-top-right-radius: 0.35em;
+  object-fit: cover;
+}
+body main .easy-bank-article .articles .list-article .text-container {
+  padding: 1em;
+}
+body main .easy-bank-article .articles .list-article .text-container .article-writer {
+  font-size: 0.5em;
+  color: #9698a6;
+}
+body main .easy-bank-article .articles .list-article .text-container .article-title {
+  text-decoration: none;
+  font-size: 1em;
+  color: #2d314d;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+  margin: 12em 0;
+}
+body main .easy-bank-article .articles .list-article .text-container .article-title:hover {
+  color: #31d35c;
+}
+body main .easy-bank-article .articles .list-article .text-container .article-text {
+  font-size: 0.75em;
+  color: #9698a6;
+  line-height: 1.5em;
+}
+body footer {
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 3em;
+  padding-bottom: 3em;
+  background-color: #2d314d;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+body footer .footer-easy-bank-start {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+body footer .footer-easy-bank-start .footer-easy-bank-sosmed {
+  display: flex;
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
+body footer .footer-easy-bank-start .footer-easy-bank-sosmed li svg path {
+  transition: all 0.2s ease-in-out;
+}
+body footer .footer-easy-bank-start .footer-easy-bank-sosmed li:hover svg path {
+  fill: #31d35c;
+}
+body footer .footer-easy-bank-start .footer-easy-bank-sosmed > * {
+  margin-right: 0.8em;
+}
+body footer .footer-easy-bank {
+  flex: 2;
+}
+body footer .footer-easy-bank .navigations {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-row-gap: 0.8em;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+body footer .footer-easy-bank .navigations li a {
+  font-size: 0.8em;
+  font-weight: 500;
+  text-decoration: none;
+  color: white;
+  transition: all 0.2s ease-in-out;
+}
+body footer .footer-easy-bank .navigations li a:hover {
+  color: #31d35c;
+}
+body footer .footer-easy-bank-end {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+body footer .footer-easy-bank-end .invite-link {
+  display: flex;
+  align-items: center;
+}
+body footer .footer-easy-bank-end .invite-link a {
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
+  font-size: 0.8em;
+  background-image: linear-gradient(to right, #31d35c, #2bb7da);
+  border-radius: 40px;
+  padding: 1.75vh 2.5vw;
+  transition: all 0.3s ease-in-out;
+}
+body footer .footer-easy-bank-end .invite-link a:hover {
+  opacity: 0.6;
+}
+body footer .footer-easy-bank-end p {
+  font-size: 0.8em;
+  color: #9698a6;
+  text-align: right;
+  margin: 0;
+}
+body footer .attribution {
+  position: absolute;
+  bottom: 7.5%;
+  left: 0;
+  color: white;
+  width: 100%;
+  text-align: center;
+  font-size: 0.75em;
+}
+body footer .attribution a {
+  color: #31d35c;
+  text-decoration: none;
+}
+
+@media (max-width: 1025px) {
+  body .navbar .navbar-links {
+    display: none;
+  }
+  body .navbar .invite-link {
+    display: none;
+  }
+  body .navbar .button-menu {
+    display: block;
+    border: none;
+    background-color: transparent;
+    position: relative;
+  }
+  body .navbar .button-menu .hamburger-menu {
+    display: block;
+  }
+  body .navbar .button-menu .close-menu {
+    display: none;
+  }
+  body .navbar .button-menu.active .hamburger-menu {
+    display: none;
+  }
+  body .navbar .button-menu.active .close-menu {
+    display: block;
+  }
+  body #nav-mobile {
+    display: block;
+    position: relative;
+    top: 2.5vh;
+    z-index: 4;
+  }
+  body #nav-mobile .navbar-links {
+    position: absolute;
+    z-index: 3;
+    width: 80vw;
+    transform: translate(10vw, -50vh);
+    background-color: white;
+    box-shadow: 0px 0px 100vh 0px black;
+    border-radius: 5px;
+    transition: all 0.7s ease-in-out;
+  }
+  body #nav-mobile .navbar-links ul {
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+  body #nav-mobile .navbar-links ul li {
+    margin: 2vh 0;
+  }
+  body #nav-mobile .navbar-links ul li a {
+    color: #2d314d;
+  }
+  body #nav-mobile .active {
+    transform: translate(10vw, 0);
+  }
+  body main .easy-bank {
+    flex-direction: column-reverse;
+    padding-left: 0;
+  }
+  body main .easy-bank .mockup {
+    overflow: hidden;
+    flex: 1;
+  }
+  body main .easy-bank .mockup .img-background {
+    transform: translate(-10%, -5%);
+  }
+  body main .easy-bank .mockup .img-mockup {
+    transform: translate(5.5%, -25%);
+  }
+  body main .easy-bank .definition {
+    padding: 0 10%;
+    text-align: center;
+    align-items: center;
+  }
+  body main .easy-bank .definition .easy-bank-title {
+    font-size: 2em;
+  }
+  body main .easy-bank .definition .invite-link {
+    display: flex;
+    align-items: center;
+  }
+  body main .easy-bank .definition .invite-link a {
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    font-size: 0.8em;
+    background-image: linear-gradient(to right, #31d35c, #2bb7da);
+    border-radius: 40px;
+    padding: 1.75vh 8vw;
+    transition: all 0.3s ease-in-out;
+  }
+  body main .easy-bank .definition .invite-link a:hover {
+    opacity: 0.6;
+  }
+  body main .easy-bank-benifit {
+    height: auto;
+    padding: 10%;
+    text-align: center;
+  }
+  body main .easy-bank-benifit .easy-bank-benifit-title {
+    font-size: 2em;
+  }
+  body main .easy-bank-benifit .easy-bank-benifit-text {
+    width: 100%;
+  }
+  body main .easy-bank-benifit .benifits {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 1em;
+  }
+  body main .easy-bank-article {
+    padding: 10%;
+    height: auto;
+  }
+  body main .easy-bank-article .easy-bank-article-title {
+    font-size: 2em;
+  }
+  body main .easy-bank-article .articles {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 2em;
+  }
+  body main .easy-bank-article .articles .list-article .text-container .article-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5vh;
+  }
+  footer .footer-easy-bank-start {
+    gap: 2.5vh;
+    align-items: center;
+  }
+  footer .footer-easy-bank-start .footer-easy-bank-sosmed {
+    gap: 2.5vh;
+  }
+  footer .footer-easy-bank-start .footer-easy-bank-sosmed li {
+    margin-right: 0;
+  }
+  footer .footer-easy-bank {
+    text-align: center;
+  }
+  footer .footer-easy-bank ul.navigations {
+    grid-template-columns: 1fr;
+    margin: 0;
+  }
+  footer div.footer-easy-bank-end {
+    align-items: center;
+    justify-content: center;
+    gap: 2.5vh;
+  }
+  footer div.footer-easy-bank-end .invite-link {
+    display: flex;
+    align-items: center;
+  }
+  footer div.footer-easy-bank-end .invite-link a {
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    font-size: 0.8em;
+    background-image: linear-gradient(to right, #31d35c, #2bb7da);
+    border-radius: 40px;
+    padding: 1.75vh 8vw;
+    transition: all 0.3s ease-in-out;
+  }
+  footer div.footer-easy-bank-end .invite-link a:hover {
+    opacity: 0.6;
+  }
+  footer div.attribution {
+    bottom: 4.5%;
+  }
+}
+@media (max-width: 600px) {
+  body main .easy-bank-benifit .benifits {
+    grid-template-columns: 1fr;
+  }
+  body main .easy-bank-article .articles {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,20 @@
+@use "../default";
+@use "../mixins/button-invite" as button;
+
+@media (max-width: 600px) {
+  body {
+    main {
+      .easy-bank-benifit {
+        .benifits {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .easy-bank-article {
+        .articles {
+          grid-template-columns: 1fr;
+        }
+      }
+    }
+  }
+}

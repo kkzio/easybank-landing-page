@@ -1,0 +1,374 @@
+@use "../default" as *;
+@use "../mixins/button-invite.scss" as button;
+
+@mixin space-lr($left: 10%, $right: 10%) {
+  padding-left: $left;
+  padding-right: $right;
+}
+
+@mixin space-tb($top: 5%, $bottom: 5%) {
+  padding-top: $top;
+  padding-bottom: $bottom;
+}
+
+.navbar-links {
+  ul {
+    display: flex;
+    justify-content: center;
+
+    li {
+      margin: 0 2%;
+      list-style: none;
+      position: relative;
+
+      a {
+        text-decoration: none;
+        color: $Grayish-Blue;
+        font-size: 0.9em;
+      }
+
+      a:after {
+        display: block;
+        pointer-events: none;
+        position: absolute;
+        z-index: 1;
+        content: "";
+        height: 4px;
+        width: 100%;
+        opacity: 0;
+        transition: all 0.4s ease-in-out;
+        transform: translateY(1.5em);
+        background: rgb(49, 211, 92);
+        background: linear-gradient(
+          90deg,
+          rgba(49, 211, 92, 1) 0%,
+          rgba(43, 183, 218, 1) 100%
+        );
+      }
+
+      a:hover:after {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Public Sans", sans-serif;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 18px;
+
+  .navbar {
+    @include space-lr();
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $White;
+    height: 5em;
+    z-index: 5;
+    position: relative;
+
+    .brand-title,
+    .invite-link {
+      flex: 1;
+    }
+
+    .navbar-links {
+      flex: 3;
+    }
+
+    .invite-link {
+      @include button.button-invite();
+      justify-content: flex-end;
+    }
+
+    .button-menu {
+      display: none;
+    }
+  }
+
+  #nav-mobile {
+    display: none;
+  }
+
+  main {
+    overflow: hidden;
+
+    .easy-bank {
+      @include space-lr($left: 10%, $right: 0%);
+      background-color: $Very-Light-Gray;
+      height: 80vh;
+      display: flex;
+      position: relative;
+
+      .definition {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+
+        .easy-bank-title {
+          font-size: 3em;
+          color: $Dark-Blue;
+          font-weight: 500;
+        }
+
+        .easy-bank-text {
+          font-size: 0.9em;
+          line-height: 1.5em;
+          color: $Grayish-Blue;
+        }
+
+        .invite-link {
+          @include button.button-invite();
+        }
+      }
+
+      .definition > * {
+        margin: 4% 0;
+      }
+
+      .mockup {
+        flex: 2;
+        position: relative;
+
+        .img-background {
+          position: absolute;
+          width: 150%;
+          top: -40%;
+          z-index: 1;
+        }
+
+        .img-mockup {
+          position: absolute;
+          transform: translate(15vw, -15vh);
+          z-index: 3;
+          width: 90%;
+        }
+      }
+    }
+
+    .easy-bank-benifit {
+      @include space-lr();
+      @include space-tb();
+      position: relative;
+      z-index: 2;
+      background-color: $Light-Grayish-Blue;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1em;
+
+      .easy-bank-benifit-title {
+        margin: 0;
+        padding: 0;
+        font-size: 2.25em;
+        color: $Dark-Blue;
+        font-weight: 500;
+      }
+
+      .easy-bank-benifit-text {
+        width: 60%;
+        color: $Grayish-Blue;
+        line-height: 1.5em;
+      }
+
+      .benifits {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        list-style: none;
+        padding: 0;
+        column-gap: 1.5em;
+
+        .list-benifit {
+          h1 {
+            font-size: 1.25em;
+            color: $Dark-Blue;
+            font-weight: 500;
+          }
+
+          p {
+            font-size: 0.9em;
+            color: $Grayish-Blue;
+            line-height: 1.5em;
+          }
+        }
+
+        .list-benifit > * {
+          margin: 1em 0;
+        }
+      }
+    }
+
+    .easy-bank-article {
+      @include space-lr();
+      @include space-tb();
+      background-color: $Very-Light-Gray;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .easy-bank-article-title {
+        margin: 0;
+        color: $Dark-Blue;
+        font-weight: 500;
+        font-size: 2.25em;
+      }
+
+      .articles {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 2em;
+        list-style: none;
+        padding: 0;
+        margin-top: 2em;
+
+        .list-article {
+          background-color: $White;
+          border-radius: 0.35em;
+
+          img {
+            width: 100%;
+            height: 50%;
+            border-top-left-radius: 0.35em;
+            border-top-right-radius: 0.35em;
+            object-fit: cover;
+          }
+
+          .text-container {
+            padding: 1em;
+
+            .article-writer {
+              font-size: 0.5em;
+              color: $Grayish-Blue;
+            }
+
+            .article-title {
+              text-decoration: none;
+              font-size: 1em;
+              color: $Dark-Blue;
+              font-weight: 500;
+              transition: all 0.2s ease-in-out;
+              margin: 12em 0;
+            }
+
+            .article-title:hover {
+              color: $Lime-Green;
+            }
+
+            .article-text {
+              font-size: 0.75em;
+              color: $Grayish-Blue;
+              line-height: 1.5em;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    @include space-lr();
+    @include space-tb($top: 3em, $bottom: 3em);
+    background-color: $Dark-Blue;
+    color: $White;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+
+    .footer-easy-bank-start {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .footer-easy-bank-sosmed {
+        display: flex;
+        padding: 0;
+        list-style: none;
+        margin: 0;
+
+        li svg path {
+          transition: all 0.2s ease-in-out;
+        }
+
+        li:hover {
+          svg path {
+            fill: $Lime-Green;
+          }
+        }
+      }
+
+      .footer-easy-bank-sosmed > * {
+        margin-right: 0.8em;
+      }
+    }
+
+    .footer-easy-bank {
+      flex: 2;
+
+      .navigations {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-row-gap: 0.8em;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+          a {
+            font-size: 0.8em;
+            font-weight: 500;
+            text-decoration: none;
+            color: $White;
+            transition: all 0.2s ease-in-out;
+          }
+
+          a:hover {
+            color: $Lime-Green;
+          }
+        }
+      }
+    }
+
+    .footer-easy-bank-end {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-end;
+
+      .invite-link {
+        @include button.button-invite();
+      }
+
+      p {
+        font-size: 0.8em;
+        color: $Grayish-Blue;
+        text-align: right;
+        margin: 0;
+      }
+    }
+
+    .attribution {
+      position: absolute;
+      bottom: 7.5%;
+      left: 0;
+      color: $White;
+      width: 100%;
+      text-align: center;
+      font-size: 0.75em;
+
+      a {
+        color: $Lime-Green;
+        text-decoration: none;
+      }
+    }
+  }
+}

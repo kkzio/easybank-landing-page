@@ -1,0 +1,191 @@
+@use "../default";
+@use "../mixins/button-invite" as button;
+
+@media (max-width: 1025px) {
+  body {
+    .navbar {
+      .navbar-links {
+        display: none;
+      }
+      .invite-link {
+        display: none;
+      }
+      .button-menu {
+        display: block;
+        border: none;
+        background-color: transparent;
+        position: relative;
+
+        .hamburger-menu {
+          display: block;
+        }
+
+        .close-menu {
+          display: none;
+        }
+      }
+
+      .button-menu.active {
+        .hamburger-menu {
+          display: none;
+        }
+        .close-menu {
+          display: block;
+        }
+      }
+    }
+
+    #nav-mobile {
+      display: block;
+      position: relative;
+      top: 2.5vh;
+      z-index: 4;
+
+      .navbar-links {
+        position: absolute;
+        z-index: 3;
+        width: 80vw;
+        transform: translate(10vw, -50vh);
+        background-color: default.$White;
+        box-shadow: 0px 0px 100vh 0px rgba(0, 0, 0, 1);
+        border-radius: 5px;
+        transition: all 0.7s ease-in-out;
+
+        ul {
+          flex-direction: column;
+          align-items: center;
+          padding: 0;
+
+          li {
+            margin: 2vh 0;
+
+            a {
+              color: default.$Dark-Blue;
+            }
+          }
+        }
+      }
+
+      .active {
+        transform: translate(10vw, 0);
+      }
+    }
+
+    main {
+      .easy-bank {
+        flex-direction: column-reverse;
+        padding-left: 0;
+
+        .mockup {
+          overflow: hidden;
+          flex: 1;
+          .img-background {
+            transform: translate(-10%, -5%);
+          }
+          .img-mockup {
+            transform: translate(5.5%, -25%);
+          }
+        }
+
+        .definition {
+          padding: 0 10%;
+          text-align: center;
+          align-items: center;
+
+          .easy-bank-title {
+            font-size: 2em;
+          }
+
+          .invite-link {
+            @include button.button-invite($width: 8vw);
+          }
+        }
+      }
+
+      .easy-bank-benifit {
+        height: auto;
+        padding: 10%;
+        text-align: center;
+
+        .easy-bank-benifit-title {
+          font-size: 2em;
+        }
+
+        .easy-bank-benifit-text {
+          width: 100%;
+        }
+
+        .benifits {
+          grid-template-columns: repeat(2, 1fr);
+          row-gap: 1em;
+        }
+      }
+
+      .easy-bank-article {
+        padding: 10%;
+        height: auto;
+
+        .easy-bank-article-title {
+          font-size: 2em;
+        }
+
+        .articles {
+          grid-template-columns: repeat(2, 1fr);
+          row-gap: 2em;
+
+          .list-article {
+            .text-container {
+              .article-text {
+                display: -webkit-box;
+                -webkit-line-clamp: 4;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5vh;
+
+    .footer-easy-bank-start {
+      gap: 2.5vh;
+      align-items: center;
+
+      .footer-easy-bank-sosmed {
+        gap: 2.5vh;
+
+        li {
+          margin-right: 0;
+        }
+      }
+    }
+
+    .footer-easy-bank {
+      text-align: center;
+      ul.navigations {
+        grid-template-columns: 1fr;
+        margin: 0;
+      }
+    }
+
+    div.footer-easy-bank-end {
+      align-items: center;
+      justify-content: center;
+      gap: 2.5vh;
+
+      .invite-link {
+        @include button.button-invite($width: 8vw);
+      }
+    }
+
+    div.attribution {
+      bottom: 4.5%;
+    }
+  }
+}
